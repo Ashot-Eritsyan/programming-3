@@ -1,5 +1,6 @@
+let LivingCreature = require('./LivingCreature')
 
-class Virus extends LivingCreature{
+module.exports = class Virus extends LivingCreature{
     constructor(x, y, index) {
         super(x,y)
         this.index = index;
