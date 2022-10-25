@@ -1,0 +1,22 @@
+canvas {
+    display: block;
+}
+
+body {
+    background: radial-gradient(rgb(0, 4, 255), rgb(6, 132, 155));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+button{
+    font-family: 'Merriweather Sans', sans-serif;
+    border-radius: 20px;
+    margin: 3px;
+
+}
+button:hover{
+    box-shadow: 0 0 40px 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.5)rotate(10deg);
+}
