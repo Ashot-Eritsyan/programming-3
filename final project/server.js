@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require("express");
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -9,9 +9,10 @@ app.get('/', function (rec, res) {
     res.redirect('index.html');
 });
 
-server.listen(3000, () => {
+server.listen(3001, () => {
     console.log("server run");
 });
+
 
 
 
@@ -137,89 +138,31 @@ function game() {
 }
 
 setInterval(game, 200);
+var weath = "winter";
+
+function weather() {
+    if (weath == "winter") {
+        weath = "spring"
+    }
+    else if (weath == "spring") {
+        weath = "summer"
+    }
+    else if (weath == "summer") {
+        weath = "autumn"
+    }
+    else if (weath == "autumn") {
+        weath = "winter"
+    }
+    io.sockets.emit('weather', weath)
+}setInterval(weather, 5000);
 
 
-io.on('connection', () => {
-    createObject()
-  });
+io.on('connection', function (socket) {
+    createObject();
+    socket.on("weather", weather);
+   
 
-
-
-//   var weath;
-
-// function Winter() {
-//     weath = "winter";
-//     if (matrix[y][x] == 1) {
-//         fill("white");
-//     }  else if (matrix[y][x] == 2) {
-//         fill("light yellow");
-//     } else if (matrix[y][x] == 3) {
-//         fill("light red");
-//     } else if (matrix[y][x] == 4) {
-//         fill("light blue");
-//     } else if (matrix[y][x] == 5) {
-//         fill("light orange");
-//     }else if (matrix[y][x] == 0) {
-//         fill("#acacac");
-//     }
-//     io.sockets.emit('Winter', weath);
-// }
-
-// function Summer() {
-//     weath = "summer";
-//     if (matrix[y][x] == 1) {
-//         fill("light green");
-//     }  else if (matrix[y][x] == 2) {
-//         fill("light yellow");
-//     } else if (matrix[y][x] == 3) {
-//         fill("light red");
-//     } else if (matrix[y][x] == 4) {
-//         fill("light blue");
-//     } else if (matrix[y][x] == 5) {
-//         fill("light orange");
-//     }else if (matrix[y][x] == 0) {
-//         fill("#acacac");
-//     }
-//     io.sockets.emit('Summer', weath);
-// }
-
-// function Spring() {
-//     weath = "spring";
-//     if (matrix[y][x] == 1) {
-//         fill("dark green");
-//     }  else if (matrix[y][x] == 2) {
-//         fill("dark yellow");
-//     } else if (matrix[y][x] == 3) {
-//         fill("dark red");
-//     } else if (matrix[y][x] == 4) {
-//         fill("dark blue");
-//     } else if (matrix[y][x] == 5) {
-//         fill("dark orange");
-//     }else if (matrix[y][x] == 0) {
-//         fill("#acacac");
-//     }
-//     io.sockets.emit('Spring', weath);
-// }
-// function Autumn() {
-//     weath = "autumn";
-//     if (matrix[y][x] == 1) {
-//         fill("dark orange");
-//     }  else if (matrix[y][x] == 2) {
-//         fill("yellow");
-//     } else if (matrix[y][x] == 3) {
-//         fill("red");
-//     } else if (matrix[y][x] == 4) {
-//         fill("blue");
-//     } else if (matrix[y][x] == 5) {
-//         fill("orange");
-//     }else if (matrix[y][x] == 0) {
-//         fill("#acacac");
-//     }
-//     io.sockets.emit('Autumn', weath);
-// }
-
-
-
+})
 
 
 
