@@ -20,3 +20,14 @@ button:hover{
     box-shadow: 0 0 40px 15px rgba(255, 255, 255, 0.3);
     transform: scale(1.5)rotate(10deg);
 }
+.bt{
+    display: grid;
+    width: 200px;
+    height: 221px;
+}
+.exanak__btns{
+    display: grid;
+    margin: 10%;
+    width: 220px;
+    height: 220px;
+}

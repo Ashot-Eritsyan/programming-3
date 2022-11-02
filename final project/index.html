@@ -17,13 +17,12 @@
     <canvas></canvas>
 
     <div class="bt">
-        <button class="btgr">Add grass</button>
-        <button class="btgrea">Add grasseater</button>
-        <button class="bthu">Add hunter</button>
-        <button class="btpr">Add predator</button>
-        <button class="btvi">Add virus</button>
-
-
+        <button onclick="AddGrass()"  style="background-color: green">Add Grass</button>
+        <button onclick="AddGrassEater()"  style="background-color: yellow; color: black">Add GrassEater</button>
+        <button onclick="AddPredator()"  style="background-color: red">Add Predator</button>
+        <button onclick="AddHunter()"  style="background-color: deepskyblue">Add Hunter</button>
+        <button onclick="AddVirus()" style="background-color: rgb(204, 0, 255)">Add Virus</button>
+        <button onclick="KillAll()"  style="background-color: white; color: black">Kill all</button>
     </div>
     <div class="exanak__btns">
         <button onclick="Spring()"  style="background-color: darkgreen">Spring</button>
@@ -36,7 +35,7 @@
 
 
     <script src="script.js"></script>
-    <script src="server.js"></script>
+    
 
 </body>
 
